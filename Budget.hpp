@@ -2,22 +2,22 @@
 
 #include <tvm/schema/message.hpp>
 
-namespace tvm { namespace schema {
+namespace tvm {
+    namespace schema {
 
-__interface [[no_pubkey]] IBudget {
+        __interface [[no_pubkey]] IBudget {
 
-  [[internal, external, dyn_chain_parse]]
-  void constructor(address SMV_root);
+            [[internal, external, dyn_chain_parse]] void constructor(address SMV_root);
 
-  [[internal, noaccept]]
-  void request(uint256 proposalId, address contestAddr, uint256 requestValue);
-};
+            [[internal, noaccept]] void request(uint256 proposalId, address contestAddr, uint256 requestValue);
+        };
 
-struct DBudget {
-  address SMV_root_;
-};
+        struct DBudget {
+            address SMV_root_;
+        };
 
-struct EBudget {};
+        struct EBudget { };
 
-}} // namespace tvm::schema
+    }    // namespace schema
+}    // namespace tvm
 
